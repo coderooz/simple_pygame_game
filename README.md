@@ -3,6 +3,8 @@
 
 This is a simple game developed using Python and Pygame. In this game, the player controls a red block that can move left and right to avoid collision with the falling white blocks. The game continues until the player collides with a white block, at which point the game ends and the player can choose to replay. The player earns points for every white block that passes without colliding.
 
+![Game Image](img/game_start.png)
+
 ### Features
 - **Player Movement**: Use the left and right arrow keys to move the red block.
 - **Enemies**: White blocks fall from the top of the screen at a constant speed.
@@ -56,6 +58,14 @@ python main.py
 - **main.py**: The entry point of the game. Initializes and starts the game.
 - **game.py**: Contains the main game logic, including the game loop, player and enemy classes, and collision detection.
 - **settings.py**: Configuration file for game settings like screen dimensions, colors, and speeds.
+
+### Some Images:
+
+![Game Image](img/game_start.png)
+![Game Play 1 Image](img/game_play.png)
+![Game Play 2 Image](img/game_play2.png)
+![Game Play 3 Image](img/game_play3.png)
+![End Game Image](img/end_game.png)
 
 ### Future Improvements
 - Add multiple enemies.
