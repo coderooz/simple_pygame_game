@@ -52,6 +52,7 @@ class Game:
         self.font = pygame.font.SysFont(None, 36)
         self.big_font = pygame.font.SysFont(None, 72)
         self.reset_game()
+        self.show_start_screen()
 
     def reset_game(self):
         self.player = Player()
@@ -59,6 +60,24 @@ class Game:
         self.running = True
         self.score = 0
         self.game_over = False
+
+    def show_start_screen(self):
+        while True:
+            self.screen.fill(BLACK)
+            title_text = self.big_font.render("Simple Game", True, WHITE)
+            self.screen.blit(title_text, (SCREEN_WIDTH // 2 - title_text.get_width() // 2, SCREEN_HEIGHT // 2 - title_text.get_height() // 2 - 100))
+            
+            start_text = self.font.render("Press Any Key to Start", True, WHITE)
+            self.screen.blit(start_text, (SCREEN_WIDTH // 2 - start_text.get_width() // 2, SCREEN_HEIGHT // 2 - start_text.get_height() // 2))
+
+            pygame.display.flip()
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    exit()
+                if event.type == pygame.KEYDOWN:
+                    return
 
     def run(self):
         while True:
@@ -112,4 +131,3 @@ class Game:
         self.replay_button = pygame.Rect(SCREEN_WIDTH // 2 - replay_text.get_width() // 2, SCREEN_HEIGHT // 2 + game_over_text.get_height(), replay_text.get_width(), replay_text.get_height())
         pygame.draw.rect(self.screen, BLACK, self.replay_button)
         self.screen.blit(replay_text, (self.replay_button.x, self.replay_button.y))
-
